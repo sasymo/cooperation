@@ -1,1 +1,2 @@
 this is just test for git
+This line wants to check conflicts bye git pull and push
