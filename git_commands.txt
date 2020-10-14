@@ -1,0 +1,29 @@
+Installation and Get started 
+git --version :    Verify that Git is installed
+git : Overall Git help at command line
+git help <command>  : for example : git help commit
+git config user.name : View the current setting of username
+git config --global user.name "Your name" : Set your user name
+git config user.email : View the current setting of email
+git config --global user.email "your@email.com" : Set your email address
+
+Initialize a Git repository 
+mkdir repos : Create a directory called "repos"
+cd repos : Change directory to "repos"
+git init : Initialize a repository  
+
+Commit to Local Repository
+git status : View file status, the newly created files are 'untracked' 
+git add : Adds the file to the staged area
+git commit -m "A message comes here" : Add the staged file to the local repo
+git log : Shows the commit details of the project
+git log --oneline : Concise version of the history
+
+Steps for Cloning a remote repo:
+git clone <https address of the repository in Github or Bitbucket> : Clone a remote repository
+ls -a : Shows all the directories including hidden ones in the current directory
+git remote -v : Shows the URL of the remote repository 
+
+Pushing the changes of local repo to the remote repo:
+git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
+
