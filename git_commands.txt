@@ -1,3 +1,4 @@
+Week 1 
 Installation and Get started 
 git --version :    Verify that Git is installed
 git : Overall Git help at command line
@@ -26,4 +27,49 @@ git remote -v : Shows the URL of the remote repository
 
 Pushing the changes of local repo to the remote repo:
 git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
+
+Week 2 :
+Show details of commit objects:
+git log --oneline : Shows the concise list of commit objects(can be used in the next command)
+git show <SHA-1(hash number of a commit)> : Shows the details of the specified commit
+
+git branch --list : Shows the list of branches in the project
+
+Manage tags:
+tag(definition):Git has the ability to tag specific points in a repository's history as being important.
+Typically, people use this functionality to mark release points(v1.0 , v2.0 and so on)
+git tag : Shows the tags of the project
+git tag -a -m "your message here" <name of the tag> : (-a for annotated tag , -m : message )
+git show <name of the tag> : Shows the tag information & its associated commit(most recent commit on the HEAD)
+git push origin <name of the tag> : Pushes the mentioned tag to the remote repository
+git tag -a -m "message comes here" <name of the tag> HAED~ : creates a tag & associate it with the parent commit of the recent commit on the HEAD
+git tag -d <name of the tag> : Delete a tag on the repo
+
+Branch:
+git branch <branch1> : Creates a branch called branch1
+git checkout <branch1> : Checkouts the aformentioned branch(branch)
+== git checkout -b <branch1> : this command executes the two previous command at once
+git log --oneline : HEAD -> branch1 : this shows that the branch1 is currently checkedout and active(any new commit will be on this branch)
+git branch : Shows the existing branches in a project and adds a * to the left of the checked out branch name
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
