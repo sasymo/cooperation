@@ -51,9 +51,46 @@ git checkout <branch1> : Checkouts the aformentioned branch(branch)
 == git checkout -b <branch1> : this command executes the two previous command at once
 git log --oneline : HEAD -> branch1 : this shows that the branch1 is currently checkedout and active(any new commit will be on this branch)
 git branch : Shows the existing branches in a project and adds a * to the left of the checked out branch name
+git branch -d <branch name>: delete a branch(When changes have been merged)
+git branch -D <branch name>: Forces deleting the branch although the changes have not been merged
+   Undo deleting a branch:
+git reflog : Shows the local history of HEAD references -->> find & copy the SHA-1 of the most recent deleted branch name 
+git checkout -b <branch name> [SHA-1 YOU COPIED] : Returns the deleted branch -->> Check the git log to make sure the branch is back
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+Tracking Branches:
+If we create a remote repository with at least one commit, the tracking branch is automatically set up. 
+git branch --all : Shows the local and tracking branch names
+git log --all --oneline --graph : Shows the full log of all local & tracking branches
+
+
+
+
+
+
+
+
+
+
+
+Manage merge confllict:
+git merge <branch1> : Merges the branch1 with the current checkedout branch of the project. If the two branches had changed the same hunck of the same file, a conflict will appear.
+When a conflict occurs : One possible approach is to abort: 
+git merge --abort : Abort the merge process
+The other approach involves editing the file containing conflict and the add, commit so the merge process can be completed.
+
 
 
 
