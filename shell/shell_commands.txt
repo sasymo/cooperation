@@ -1,0 +1,67 @@
+Getting started:
+man <command_name> : Shows the manual page of the command 
+$SHELL : Access the value of a variable called 'SHELL'
+which bash : Shows the address of bash
+
+Variable Declaration:
+counter=1 : Sets the value of 1 to a variable called counter
+echo ${counter} : Enclosing the variable name with curly brackets makes sure the shell knows where the variable name ends
+printenv : Shows all the environment variables (writtern generally in all caps)
+export base=/home/ghuli : Create your own environment variable
+
+
+Commands:
+which <command_name>: Displays the address where the command is stored(for example : which grep)
+ls -al : list the files & folders(including hidden(-a)) in the current directory with permissions, size,...(-l)
+tab completion : Completes the file or command name, might as well use double tab in case more than one option exis
+history : Shows all the commands run on the device up to now 
+!-n : runs the nth previous command(you can see the n from executing history command)
+!n : Command number n in the history
+!gi : Runs the last command that started with "gi"
+!gi:p :(:p)at the end of the text prints out the result but not executed
+Up or Down arrow key : scroll to the previous or next command and rerun it or edit it in case of typo
+Search the history:
+	history
+	ctrl+r : searches the commands in history and finds the ones including the search term
+	return key: executes the found term(in history)
+	ESC : put the search result on the regular command line
+	ctrl+c : get out of the search history
+($ ls) : substitutes the results of a command for use by another command
+alias q=exit : With this command, instead of typing "exit" to get out of the program, a simple "q" can do the trick.
+		(alias allows you to use the abbreviation for a command)
+To undo alias: use "\" before the defined alias, for example if alias ls="ls -F" and want to have the 'ls' to act normal , one should type '\' before it
+
+Shortcut keys:
+ctrl-k : Delet line from cursor forward
+ctrl-z : suspend current command
+ctrl-l : clear screen
+
+
+stat manual.xml : Shows more information(than ls) about the file
+file manual.xml : Shows the type of the file
+chmod g+w manual.xml : Granst write(w) permission to the group(g)
+
+cd - : Return to the previous directory
+
+Filename wildcards:
+* 	Match zero or more characters.
+? 	Match exactly one character.
+[characters] 	Match any single character from among characters listed between brackets.
+[!characters] 	Match any single character other than characters listed between brackets.
+[a-z] 	Match any single character from among the range of characters listed between brackets.
+[!a-z] 	Match any single character from among the characters not in the range listed between brackets
+{frag1,frag2,…} 	Brace expansion: create strings frag1, frag2, etc.
+
+ls *.{r,q,R}: list all the R conde files with a variety of suffixes
+echo cp filename{,.old} : echo command is used to check that a wildcard expansion acts as we think it will
+
+\ : To deactivate the special meaning of a character in shell and you want to treat it as a character, precede it with a backslash(\)
+echo {1..15}: Shows the numbers from 1 to 15 (increment by 1)
+
+(One line to check the SSH) 
+
+
+
+
+ 
+
