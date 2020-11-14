@@ -4,24 +4,24 @@
 * git config --global user.name "Your name" : Set your user name git config user.email : View the current setting of email 
 * git config --global user.email "your@email.com" : Set your email address
 
-Initialize a Git repository 
+# Initialize a Git repository 
 * mkdir repos : Create a directory called "repos"
 * cd repos : Change directory to "repos"
 * git init : Initialize a repository  
 
-Commit to Local Repository
+# Commit to Local Repository
 * git status : View file status, the newly created files are 'untracked' 
 * git add : Adds the file to the staged area
 * git commit -m "A message comes here" : Add the staged file to the local repo
 * git log : Shows the commit details of the project
 * git log --oneline : Concise version of the history
 
-Steps for Cloning a remote repo:
+# Steps for Cloning a remote repo:
 * git clone <https address of the repository in Github or Bitbucket> : Clone a remote repository
 * ls -a : Shows all the directories including hidden ones in the current directory
 * git remote -v : Shows the URL of the remote repository 
 
-Pushing the changes of local repo to the remote repo:
+# Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
 ## Week 2 :
@@ -31,7 +31,7 @@ Show details of commit objects:
 
 * git branch --list : Shows the list of branches in the project
 
-Manage tags:
+# Manage tags:
 tag(definition):Git has the ability to tag specific points in a repository's history as being important.
 Typically, people use this functionality to mark release points(v1.0 , v2.0 and so on)
 * git tag : Shows the tags of the project
@@ -41,7 +41,7 @@ Typically, people use this functionality to mark release points(v1.0 , v2.0 and 
 * git tag -a -m "message comes here" <name of the tag> HAED~ : creates a tag & associate it with the parent commit of the recent commit on the HEAD
 * git tag -d <name of the tag> : Delete a tag on the repo
 
-Branch:
+# Branch:
 * git branch <branch1> : Creates a branch called branch1
                                                                         == git checkout -b <branch1> : this command executes the two previous command at once 
 * git checkout <branch1> : Checkouts the aformentioned branch(branch)
@@ -55,25 +55,25 @@ Branch:
 * git checkout -b <branch name> [SHA-1 YOU COPIED] : Returns the deleted branch -->> Check the git log to make sure the branch is back
 
 
-Tracking Branches:
+# Tracking Branches:
 If we create a remote repository with at least one commit, the tracking branch is automatically set up. 
 * git branch --all : Shows the local and tracking branch names
 * git log --all --oneline --graph : Shows the full log of all local & tracking branches
 
 
-Manage merge confllict:
+# Manage merge confllict:
 * git merge <branch1> : Merges the branch1 with the current checkedout branch of the project. If the two branches had changed the same hunck of the same file, a conflict will appear.
 When a conflict occurs : One possible approach is to abort: 
 * git merge --abort : Abort the merge process
 The other approach involves editing the file containing conflict and the add, commit so the merge process can be completed.
 
 
-Fetch, Pull and Push:
+# Fetch, Pull and Push:
 * git fetch : Retrieves new objects & refrences to the remote repository 
 * git pull : Fetches and merges commits locally , if no new commit has been made to the local repository, a fast forward merge takes place, otherwise at first a commit for the merge is created and then the pull gets executed
 * git push : Adds new objects and references to the remote repository(To be on the safe side, first perform pull and then push)
 
-Rebase:(rebasing is a form of merge therefore a conflict can happen)
+# Rebase:(rebasing is a form of merge therefore a conflict can happen)
 Move commits to a new parent(base)
  - The unique commits of the featureX branch (B and C) are reapplied to the tip of the master branch(commit D)
  - Because the ancestor chain is different, each of the reapplied commits has a different commit ID(B' and C')
@@ -84,12 +84,12 @@ The are 2 types of rebase:
  -Rebase
  -Interactive rebase
 
-Regular rebase:
+**Regular rebase:**
 * git checkout <featureX branch>: Acivates(checks out) featureX branch
 * git rebase master : Rebases the commits on the featureX branch on the tip of master branch(Upstream:usually refers the parent branch of the rebased branch)
 
 
-Rebase with resolving a merge conflict:
+**Rebase with resolving a merge conflict:**
 (Two branches(master & featureX) changed the same part of one file(fileB.txt))
 
 	checkout <featureX branch> : 
@@ -99,26 +99,27 @@ Rebase with resolving a merge conflict:
 	git rebase --continue : Continues the rebase process
 	git log --oneline --graph : Should show a linear git graph after the rebase 
 
-Rebase containing conflict and we decide to cancel the rebase:
+**Rebase containing conflict and we decide to cancel the rebase:**
 	checkout <featureX branch>
 	git rebase master(Here we might face a conflict & want to cancel)
 	git rebase --abort
 
-Comparison between merge and rebase in steps:
+**Comparison between merge and rebase in steps:**
+--------------------------                              -----------------------------
 Merge                                                    Rebase  
-------------------------------------------------------------------------  
-1. git checkout master                 --                 1.git checkout featureX
-2. git merge featureX                  --                 2.git rebase master
-a. CONFLICT                            --                 a.CONFLICT
-3. git status                          --                 3.git status
-a. Both modified fileB.txt             --                 a.Both modified fileB.txt
-4. Fix fileB.txt                       --                 4.Fix fileB.txt
-5. git add fileB.txt                   --                 5.git add fileB.txt
-6. git commit                          --                 6.git rebase --continue   
+--------------------------                              ----------------------------- 
+1. git checkout master                                  1.git checkout featureX
+2. git merge featureX                                   2.git rebase master
+a. CONFLICT                                             a.CONFLICT
+3. git status                                           3.git status
+a. Both modified fileB.txt                              a.Both modified fileB.txt
+4. Fix fileB.txt                                        4.Fix fileB.txt
+5. git add fileB.txt                                    5.git add fileB.txt
+6. git commit                                           6.git rebase --continue   
+--------------------------                              ---------------------------- 
 
 
-
-Amend a commit:
+**Amend a commit:**
 One can change the most recent commit
 	- change the commit message
 	- change the project files
@@ -134,12 +135,12 @@ Let's say only the commit message of the last commit has a typo, in this case th
 
 
 
-Interactive rebase:
+**Interactive rebase:**
 During interactive rebase you can edit commits using commands
 	The commits can belong to any branch 
 	The commit history is changed(Vorsicht: Do NOT use for shared commits)
 
-Interactive rebase options:(to change a branch in many ways)
+**Interactive rebase options:**(to change a branch in many ways)
 	Use the commit as is
 	Edit the commit message
 	Stop and edit the commit
