@@ -1,5 +1,3 @@
-summarized from :Version Control with Git by Atlassian
-
 Week 1(Installation and Get started)
 -----------------------------------
 * git --version : Verify that Git is installed git : Overall Git help at command line 
