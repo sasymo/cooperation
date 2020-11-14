@@ -110,16 +110,16 @@ The are 2 types of rebase:
 
 **Comparison between merge and rebase in steps:**
 
-| Merge                |                              |Rebase                      |  
-------------------------                              ------------------------------ 
-|1. git checkout master|                                  1. git checkout featureX |
-|2. git merge featureX |                                  2. git rebase master     |
- |a. CONFLICT          |                                   a. CONFLICT             |
-|3. git status         |                                  3. git status            |
- |a. Both modified fileB.txt|                              a. Both modified fileB.txt|
-|4. Fix fileB.txt      |                                  4. Fix fileB.txt         |
-|5. git add fileB.txt  |                                  5. git add fileB.txt     |
-|6. git commit         |                                  6. git rebase --continue |   
+| Merge                      | Rebase                         |  
+| -----------------------    | ------------------------------ |
+| 1. git checkout master     | 1. git checkout featureX       |
+| 2. git merge featureX      | 2. git rebase master           |
+| a. CONFLICT                | a. CONFLICT                    |
+| 3. git status              | 3. git status                  |
+| a. Both modified fileB.txt | a. Both modified fileB.txt     |
+| 4. Fix fileB.txt           | 4. Fix fileB.txt               |
+| 5. git add fileB.txt       | 5. git add fileB.txt           |
+| 6. git commit              | 6. git rebase --continue       |   
                              
 
 
