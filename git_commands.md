@@ -1,4 +1,7 @@
-## Week 1(Installation and Get started)
+summarized from :Version Control with Git by Atlassian
+
+Week 1(Installation and Get started)
+-----------------------------------
 * git --version : Verify that Git is installed git : Overall Git help at command line 
 * git help <command> : for example : git help commit git config user.name : View the current setting of username 
 * git config --global user.name "Your name" : Set your user name git config user.email : View the current setting of email 
@@ -24,7 +27,8 @@
 # Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
-## Week 2 :
+Week 2 :
+----------
 Show details of commit objects:
 * git log --oneline : Shows the concise list of commit objects(can be used in the next command)
 * git show <SHA-1(hash number of a commit)> : Shows the details of the specified commit
@@ -105,17 +109,17 @@ The are 2 types of rebase:
 	git rebase --abort
 
 **Comparison between merge and rebase in steps:**
---------------------------                              -----------------------------
-Merge                                                    Rebase  
---------------------------                              ----------------------------- 
-1. git checkout master                                  1.git checkout featureX
-2. git merge featureX                                   2.git rebase master
-a. CONFLICT                                             a.CONFLICT
-3. git status                                           3.git status
-a. Both modified fileB.txt                              a.Both modified fileB.txt
-4. Fix fileB.txt                                        4.Fix fileB.txt
-5. git add fileB.txt                                    5.git add fileB.txt
-6. git commit                                           6.git rebase --continue   
+
+|Merge                   |                              |Rebase                      |  
+----------------------                                   ----------------------- 
+|1. git checkout master                                  1. git checkout featureX|
+|2. git merge featureX                                   2. git rebase master|
+ |a. CONFLICT                                             a. CONFLICT|
+|3. git status                                           3. git status|
+ |a. Both modified fileB.txt                              a. Both modified fileB.txt|
+|4. Fix fileB.txt                                        4. Fix fileB.txt|
+|5. git add fileB.txt                                    5. git add fileB.txt|
+|6. git commit                                           6. git rebase --continue|   
 --------------------------                              ---------------------------- 
 
 
@@ -189,7 +193,7 @@ Git Workflow:
 
 
 
-
+*summarized version of "Version Control with Git by Atlassian"*
 
 
 
