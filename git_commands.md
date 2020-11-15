@@ -127,30 +127,30 @@ One can change the most recent commit
 	- change the project files
 The amend creates a new SHA-1(rewrite the history)
 Let's imagine the fileA.txt which we added and commited contains an error and we want to rewrite the history. The procedure is as follows:
-	-Modify fileA.txt
-	-Add fileA.txt to the staging area
-	-Amend the previous commit by executing ' git commit --amend -m "add fileA.txt" '
-	-In case you want to keep the old commit message, the command is : 'git commit --amend --no-edit 
+	- Modify fileA.txt
+	- Add fileA.txt to the staging area
+	- Amend the previous commit by executing ' git commit --amend -m "add fileA.txt" '
+	- In case you want to keep the old commit message, the command is : 'git commit --amend --no-edit 
 If you execute 'git log --oneline ', you will realize that the SHA-1 of the amended commit is different from the previous one.
 Let's say only the commit message of the last commit has a typo, in this case the amend procedure is as follows:
-	-git commit --amend -m "Corrected commit message"
+	- git commit --amend -m "Corrected commit message"
 
 
 
 **Interactive rebase**
 During interactive rebase you can edit commits using commands
-	The commits can belong to any branch 
-	The commit history is changed(Vorsicht: Do NOT use for shared commits)
+	- The commits can belong to any branch 
+	- The commit history is changed(Vorsicht: Do NOT use for shared commits)
 
 **Interactive rebase options**(to change a branch in many ways)
-	Use the commit as is
-	Edit the commit message
-	Stop and edit the commit
-	Drop/delete the commit
-	Squash
-	Fixup	
-	Reorder commits
-	Execute shell commands
+	- Use the commit as is
+	- Edit the commit message
+	- Stop and edit the commit
+	- Drop/delete the commit
+	- Squash
+	- Fixup	
+	- Reorder commits
+	- Execute shell commands
 	
 
 1. checkout <branch_name>
@@ -158,23 +158,23 @@ During interactive rebase you can edit commits using commands
 3.
 
 ### Squash 
-Squash a commit from history using interactive rebase:[squash:to press sth into a flat or flatter shape]
-	checkout the "featureX" branch(this is the branch where the commit to be deleted is located)
-	view the commit graph of the "featureX" branch
-	git rebase -i <SHA-1>
-	Explore the interactive rebase editor
-	Remove the commit by replacing the "pick" with "squash". Save the file
-	An editor opens for the commit message of the squash commit(change it if you like)
-	View the commit graph with "git log --oneline" : the squashed commit is removed 
+Squash a commit from history using interactive rebase:[squash in dictionary = to press sth into a flat or flatter shape]
+	- checkout the "featureX" branch(this is the branch where the commit to be deleted is located)
+	- view the commit graph of the "featureX" branch
+	- git rebase -i <SHA-1>
+	- Explore the interactive rebase editor
+	- Remove the commit by replacing the "pick" with "squash". Save the file
+	- An editor opens for the commit message of the squash commit(change it if you like)
+	- View the commit graph with "git log --oneline" : the squashed commit is removed 
 
 **Perform a squash merge**
 	1. Create a "featureX" branch (git branch featureX)
 	2. Create a commit on the featureX branch (commit A)
 	3. Create another commit on the featureX branch (commit B)
 	4. Perform a squash merge of featureX branch into master branch
-		-checkout the master branch : (git checkout master)
-		-git merge --squash featureX
-		-git commit : in the opened editor specify the commit message
+		- checkout the master branch : (git checkout master)
+		- git merge --squash featureX
+		- git commit : in the opened editor specify the commit message
 	5. View your commit graph : git graph --oneline (The message of commit A will not be part of the master branch)
 	6. Delete the featureX branch label:(git branch -d feaureX)
 	
