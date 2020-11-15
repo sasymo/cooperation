@@ -1,28 +1,33 @@
 Week 1(Installation and Get started)
 -----------------------------------
 * git --version : Verify that Git is installed git : Overall Git help at command line 
-* git help <command> : for example : git help commit git config user.name : View the current setting of username 
+* git help <command> : for example : git help commit 
+* git config user.name : View the current setting of username 
 * git config --global user.name "Your name" : Set your user name git config user.email : View the current setting of email 
-* git config --global user.email "your@email.com" : Set your email address
+* git config --global user.email "yourID@email.com" : Set your email address
 
-# Initialize a Git repository 
+### Initialize a Git repository
+------------ 
 * mkdir repos : Create a directory called "repos"
 * cd repos : Change directory to "repos"
 * git init : Initialize a repository  
 
-# Commit to Local Repository
+### Commit to Local Repository
+------------
 * git status : View file status, the newly created files are 'untracked' 
 * git add : Adds the file to the staged area
 * git commit -m "A message comes here" : Add the staged file to the local repo
 * git log : Shows the commit details of the project
 * git log --oneline : Concise version of the history
 
-# Steps for Cloning a remote repo:
+### Steps for Cloning a remote repo:
+------------
 * git clone <https address of the repository in Github or Bitbucket> : Clone a remote repository
 * ls -a : Shows all the directories including hidden ones in the current directory
 * git remote -v : Shows the URL of the remote repository 
 
-# Pushing the changes of local repo to the remote repo:
+### Pushing the changes of local repo to the remote repo:
+------------
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
 Week 2 :
@@ -33,7 +38,8 @@ Show details of commit objects:
 
 * git branch --list : Shows the list of branches in the project
 
-# Manage tags:
+### Manage tags:
+------------
 tag(definition):Git has the ability to tag specific points in a repository's history as being important.
 Typically, people use this functionality to mark release points(v1.0 , v2.0 and so on)
 * git tag : Shows the tags of the project
@@ -43,7 +49,8 @@ Typically, people use this functionality to mark release points(v1.0 , v2.0 and 
 * git tag -a -m "message comes here" <name of the tag> HAED~ : creates a tag & associate it with the parent commit of the recent commit on the HEAD
 * git tag -d <name of the tag> : Delete a tag on the repo
 
-# Branch:
+### Branch:
+------------
 * git branch <branch1> : Creates a branch called branch1
                                                                         == git checkout -b <branch1> : this command executes the two previous command at once 
 * git checkout <branch1> : Checkouts the aformentioned branch(branch)
@@ -57,25 +64,29 @@ Typically, people use this functionality to mark release points(v1.0 , v2.0 and 
 * git checkout -b <branch name> [SHA-1 YOU COPIED] : Returns the deleted branch -->> Check the git log to make sure the branch is back
 
 
-# Tracking Branches:
+### Tracking Branches:
+------------
 If we create a remote repository with at least one commit, the tracking branch is automatically set up. 
 * git branch --all : Shows the local and tracking branch names
 * git log --all --oneline --graph : Shows the full log of all local & tracking branches
 
 
-# Manage merge confllict:
+### Manage merge confllict:
+------------
 * git merge <branch1> : Merges the branch1 with the current checkedout branch of the project. If the two branches had changed the same hunck of the same file, a conflict will appear.
 When a conflict occurs : One possible approach is to abort: 
 * git merge --abort : Abort the merge process
 The other approach involves editing the file containing conflict and the add, commit so the merge process can be completed.
 
 
-# Fetch, Pull and Push:
+### Fetch, Pull and Push:
+------------
 * git fetch : Retrieves new objects & refrences to the remote repository 
 * git pull : Fetches and merges commits locally , if no new commit has been made to the local repository, a fast forward merge takes place, otherwise at first a commit for the merge is created and then the pull gets executed
 * git push : Adds new objects and references to the remote repository(To be on the safe side, first perform pull and then push)
 
-# Rebase:(rebasing is a form of merge therefore a conflict can happen)
+### Rebase:(rebasing is a form of merge therefore a conflict can happen)
+------------
 Move commits to a new parent(base)
  - The unique commits of the featureX branch (B and C) are reapplied to the tip of the master branch(commit D)
  - Because the ancestor chain is different, each of the reapplied commits has a different commit ID(B' and C')
@@ -157,7 +168,8 @@ During interactive rebase you can edit commits using commands
 2. git rebase -i <SHA1-commit> : i stands for interactive and the children of the mentioned commit can be accessed within interactive rebase 
 3.
 
-
+### Squash 
+------------
 Squash a commit from history using interactive rebase:[squash:to press sth into a flat or flatter shape]
 	checkout the "featureX" branch(this is the branch where the commit to be deleted is located)
 	view the commit graph of the "featureX" branch
@@ -178,12 +190,14 @@ Perform a squash merge:
 	5. View your commit graph : git graph --oneline (The message of commit A will not be part of the master branch)
 	6. Delete the featureX branch label:(git branch -d feaureX)
 	
-Pull Request 1 :
+### Pull Request 1 :
+------------
 
 
 
 
-Git Workflow:
+### Git Workflow:
+------------
 
 
 
