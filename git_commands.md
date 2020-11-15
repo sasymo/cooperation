@@ -123,17 +123,20 @@ The are 2 types of rebase:
 
 **Amend a commit**
 One can change the most recent commit
-	* change the commit message
-	* change the project files
+* change the commit message
+* change the project files
 The amend creates a new SHA-1(rewrite the history)
 Let's imagine the fileA.txt which we added and commited contains an error and we want to rewrite the history. The procedure is as follows:
-	* Modify fileA.txt
-	* Add fileA.txt to the staging area
-	* Amend the previous commit by executing ' git commit --amend -m "add fileA.txt" '
-	* In case you want to keep the old commit message, the command is : 'git commit --amend --no-edit 
-If you execute 'git log --oneline ', you will realize that the SHA-1 of the amended commit is different from the previous one.
+* Modify fileA.txt
+* Add fileA.txt to the staging area
+Amend the previous commit by executing: 
+* git commit --amend -m "add fileA.txt" 
+In case you want to keep the old commit message, the command is :
+* git commit --amend --no-edit 
+In case you execute the following:
+* git log --oneline :  you will realize that the SHA-1 of the amended commit is different from the previous one.
 Let's say only the commit message of the last commit has a typo, in this case the amend procedure is as follows:
-	* git commit --amend -m "Corrected commit message"
+* git commit --amend -m "Corrected commit message"
 
 
 
