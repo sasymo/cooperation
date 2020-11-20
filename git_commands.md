@@ -1,25 +1,30 @@
-Week 1
+# Table of Contents
+1. [Git Basics](#example)
+2. [Git Branch](#example2)
+3. [Pull request](#third-example)
+
+
+Git Basics
 --------
-### Installation and Get started
+### Git Configuration & initialize
 * git --version : Verify that Git is installed git : Overall Git help at command line 
 * git help <command> : for example : git help commit 
 * git config user.name : View the current setting of username 
 * git config --global user.name "Your name" : Set your user name git config user.email : View the current setting of email 
 * git config --global user.email "yourID@email.com" : Set your email address
-
-### Initialize a Git repository
+#### Initialize
 * mkdir repos : Create a directory called "repos"
 * cd repos : Change directory to "repos"
 * git init : Initialize a repository  
 
-### Commit to Local Repository
+### Commit to Repository
 * git status : View file status, the newly created files are 'untracked' 
 * git add : Adds the file to the staged area
 * git commit -m "A message comes here" : Add the staged file to the local repo
 * git log : Shows the commit details of the project
 * git log --oneline : Concise version of the history
 
-### Steps for Cloning a remote repo
+### Cloning a remote repo
 * git clone <https address of the repository in Github or Bitbucket> : Clone a remote repository
 * ls -a : Shows all the directories including hidden ones in the current directory
 * git remote -v : Shows the URL of the remote repository 
@@ -27,7 +32,7 @@ Week 1
 ### Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
-Week 2 
+Git Branch
 ----------
 ### Show details of commit objects
 * git log --oneline : Shows the concise list of commit objects(can be used in the next command)
@@ -180,7 +185,11 @@ Squash a commit from history using interactive rebase:[squash in dictionary = to
 * git commit : in the opened editor specify the commit message
 5. View your commit graph : git graph --oneline (The message of commit A will not be part of the master branch)
 6. Delete the featureX branch label:(git branch -d feaureX)
-	
+
+Pull request
+-----------------
+
+
 ### Pull Request 1 
 
 
