@@ -32,9 +32,9 @@ Git Basics <a name="basics"></a>
 ### Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
-Git Branch<a name="branch"></a>
+Git Branch
 ----------
-### Show details of commit objects
+### Show details of commit objects<a name="branch"></a>
 * git log --oneline : Shows the concise list of commit objects(can be used in the next command)
 * git show <SHA-1(hash number of a commit)> : Shows the details of the specified commit
 * git branch --list : Shows the list of branches in the project
