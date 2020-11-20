@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Git Basics](#basics)
-2. [All about branches](#branch)
+2. [On branches](#on-branches)
 3. [Pull request](#pull-request)
 
 
@@ -32,7 +32,7 @@ Git Basics <a name="basics"></a>
 ### Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
-All about branches<a name="branch"></a>
+On branches<a name="on-branches"></a>
 ----------
 ### Show details of commit objects
 * git log --oneline : Shows the concise list of commit objects(can be used in the next command)
