@@ -1,10 +1,10 @@
 # Table of Contents
-1. [Git Basics](#example)
-2. [Git Branch](#example2)
-3. [Pull request](#third-example)
+1. [Git Basics](#basics)
+2. [Git Branch](#branch)
+3. [Pull request](#pull-request)
 
 
-Git Basics
+Git Basics <a name="basics"></a>
 --------
 ### Git Configuration & initialize
 * git --version : Verify that Git is installed git : Overall Git help at command line 
@@ -32,7 +32,7 @@ Git Basics
 ### Pushing the changes of local repo to the remote repo:
 * git push -u origin master : Origin is the name of the remote repository, master is the default branch that we want to push 
 
-Git Branch
+Git Branch<a name="branch"></a>
 ----------
 ### Show details of commit objects
 * git log --oneline : Shows the concise list of commit objects(can be used in the next command)
@@ -186,7 +186,7 @@ Squash a commit from history using interactive rebase:[squash in dictionary = to
 5. View your commit graph : git graph --oneline (The message of commit A will not be part of the master branch)
 6. Delete the featureX branch label:(git branch -d feaureX)
 
-Pull request
+Pull request<a name="pull-request"></a>
 -----------------
 
 
